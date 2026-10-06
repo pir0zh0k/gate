@@ -1,0 +1,33 @@
+{
+  "name": "@gate/api",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --exclude **/*.integration.test.ts",
+    "test:integration": "vitest run tests/backend.integration.test.ts",
+    "migrate": "tsx src/database/migrate-cli.ts"
+  },
+  "dependencies": {
+    "@gate/contracts": "workspace:*",
+    "fastify": "^5.0.0",
+    "@fastify/cookie": "^11.0.0",
+    "@fastify/rate-limit": "^10.0.0",
+    "@fastify/static": "^10.1.2",
+    "pg": "^8.16.0",
+    "openai": "^6.0.0",
+    "dotenv": "^17.0.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.15.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0",
+    "tsx": "^4.20.0",
+    "tsup": "^8.5.0",
+    "vitest": "^3.2.0"
+  }
+}
